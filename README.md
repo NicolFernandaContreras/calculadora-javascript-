@@ -1,35 +1,53 @@
-Guía de Despliegue — Calculadora JS en AWS (EC2)
+# 📘 Guía de Despliegue — Calculadora JS en AWS (EC2)
 
-☀️ Proyecto: Calculadora JavaScript (estática)
-📦 Repo: github.com/NicolFernandaContreras/calculadora-javascript-.git
-🌐 Servida con: http-server en el puerto 8080
+[![Deploy on AWS](https://img.shields.io/badge/Deploy-AWS%20EC2-orange?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/ec2/)  
+[![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-yellow?logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)  
+[![Powered by Node.js](https://img.shields.io/badge/Powered%20by-Node.js-green?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-Esta guía lanza un servidor HTTP simple para archivos estáticos (HTML/CSS/JS) en una instancia Ubuntu de EC2.
+☀️ **Proyecto:** Calculadora JavaScript (estática)  
+📦 **Repositorio:** [github.com/NicolFernandaContreras/calculadora-javascript-](https://github.com/NicolFernandaContreras/calculadora-javascript-)  
+🌐 **Servidor:** `http-server` en el puerto **8080**
 
-📋 Requisitos Previos
+Esta guía explica cómo lanzar un servidor HTTP simple para archivos estáticos (HTML/CSS/JS) en una instancia **Ubuntu EC2** de AWS.
 
-Instancia EC2 (Ubuntu) creada y corriendo.
+---
 
-Security Group con puertos 22 (SSH) y 8080 (HTTP del http-server) abiertos.
+## 📸 Vista Previa de la App
 
-🚀 Paso 1: Conectarte a tu Instancia
+![Screenshot de la Calculadora](screenshot.png)
 
-Opción A: EC2 Instance Connect (recomendado)
+> 💡 Toma un pantallazo de la app funcionando, guárdalo como `screenshot.png` en la carpeta principal del repositorio y GitHub lo mostrará aquí.
 
-AWS Console → EC2 → Instances
+---
 
-Selecciona tu instancia → Connect → EC2 Instance Connect → Connect
+## 📋 Requisitos Previos
+- Instancia **EC2 (Ubuntu)** creada y corriendo.  
+- **Security Group** con puertos:
+  - **22 (SSH)** → para conectarte a la instancia.  
+  - **8080 (HTTP)** → para acceder a la aplicación.  
 
-🔧 Paso 2: Preparar el Entorno (Ubuntu)
+---
 
-Ejecuta, en orden:
+## 🚀 Paso 1: Conectarte a tu Instancia
+
+**Opción A: EC2 Instance Connect (recomendado)**
+1. Ve a **AWS Console** → **EC2** → **Instances**.  
+2. Selecciona tu instancia → **Connect** → **EC2 Instance Connect** → **Connect**.  
+
+---
+
+## 🔧 Paso 2: Preparar el Entorno (Ubuntu)
+
+Ejecuta los siguientes comandos en la terminal:
+
+```bash
 # 1) Actualiza paquetes
 sudo apt update
 
 # 2) Aplica actualizaciones
 sudo apt upgrade -y
 
-# 3) Instala NVM (gestor de Node)
+# 3) Instala NVM (gestor de Node.js)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 # 4) Carga NVM en la sesión actual
@@ -38,45 +56,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 # 5) Instala Node.js (v22)
 nvm install 22
 
-# 6) Verifica versión de Node
+# 6) Verifica versión instalada
 node -v
 
-📥 Paso 3: Clonar tu Repositorio
-git clone https://github.com/NicolFernandaContreras/calculadora-javascript-.git
-cd calculadora-javascript-/
-
-🌐 Paso 4: Levantar el servidor estático
-# 9) Instala http-server de forma global
-npm install -g http-server
-
-# 10) Inicia el servidor en el puerto 8080
-http-server -p 8080
-
-🌍 Paso 5: Acceder desde el Navegador
-
-En tu equipo local, entra a:
-http://IP_PUBLICA_DE_TU_EC2:8080
-
-Si no carga, revisa que el Security Group tenga el puerto 8080 abierto y que sigues con la terminal activa.
-
-🛑 Detener el Servidor
-
-Presiona Ctrl + C en la terminal donde corre http-server.
-
-🛡️ Security Group recomendado
-
-Asegúrate de tener estas reglas:
-| Tipo              | Puerto | Origen            | Descripción           |
-| ----------------- | ------ | ----------------- | --------------------- |
-| SSH               | 22     | Tu IP / 0.0.0.0/0 | Acceso SSH            |
-| TCP Personalizado | 8080   | 0.0.0.0/0         | Acceso HTTP de prueba |
-
-⚠️ Notas Importantes
-
-Solo desarrollo: http-server es para pruebas, no producción.
-
-Sin persistencia: si cierras la terminal, el sitio se apaga.
-
-IP dinámica: al detener/iniciar la instancia, puede cambiar la IP.
-
-Sin SSL: solo HTTP (no HTTPS). Para HTTPS usa Nginx/ALB + dominio.
