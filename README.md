@@ -59,3 +59,9 @@ nvm install 22
 # 6) Verifica versión instalada
 node -v
 
+
+## 📥 Paso 3: Clonar tu Repositorio
+
+```bash
+git clone https://github.com/NicolFernandaContreras/calculadora-javascript-.git
+cd calculadora-javascript-/
