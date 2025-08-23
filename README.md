@@ -12,13 +12,6 @@ Esta guía explica cómo lanzar un servidor HTTP simple para archivos estáticos
 
 ---
 
-## 📸 Vista Previa de la App
-
-![Screenshot de la Calculadora](screenshot.png)
-
-> 💡 Toma un pantallazo de la app funcionando, guárdalo como `screenshot.png` en la carpeta principal del repositorio y GitHub lo mostrará aquí.
-
----
 
 ## 📋 Requisitos Previos
 - Instancia **EC2 (Ubuntu)** creada y corriendo.  
@@ -58,10 +51,3 @@ nvm install 22
 
 # 6) Verifica versión instalada
 node -v
-
-
-## 📥 Paso 3: Clonar tu Repositorio
-
-```bash
-git clone https://github.com/NicolFernandaContreras/calculadora-javascript-.git
-cd calculadora-javascript-/
