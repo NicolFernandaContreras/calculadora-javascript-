@@ -1,10 +1,18 @@
-# Calculadora JS
+🌐 Guía de Desarrollo – Node.js y Django en AWS (EC2)
+🧮 Proyecto 1: Calculadora en JavaScript
 
-<img src="https://i.ibb.co/QJBNx5v/Screen-Shot-2021-01-31-at-22-41-36.png" alt="drawing" width="400"/>
+Aplicación simple en Node.js que corre con un servidor local usando http-server.
 
-**Calculadora desarrollada en este tutorial:** https://youtu.be/7YDagj3cVAk
+📋 Requisitos Previos
 
-Tecnologías:
-- HTML
-- Css
-- JavaScript
+Instancia EC2 creada y corriendo (Ubuntu recomendado).
+
+Security Group con puertos abiertos: 22 (SSH) y 8080.
+
+Acceso SSH a la instancia.
+
+🚀 Paso 1: Conectarse a la Instancia EC2
+
+Usa EC2 Instance Connect o tu clave .pem:
+
+ssh -i tu_clave.pem ubuntu@tu-ip-publica
