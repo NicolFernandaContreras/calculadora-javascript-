@@ -11,12 +11,12 @@ El workflow:
 ### ¿Cómo correr los tests en GitHub?
 Solo haz **commit** a `main` y revisa la pestaña **Actions**.
 
-### Notificaciones
-En el repo, haz clic en **Watch → All Activity** para recibir notificaciones por email cuando el workflow pase o falle.
-
-### Evidencias sugeridas
+### Evidencias 
 - ✅ Captura del workflow en verde (éxito).
-- ❌ Captura de un fallo a propósito (ej. cambiando un `expect` del test para que falle). Luego vuelve a dejarlo bien.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2483bdcf-2d04-420d-9d44-2e849f8c3f2a" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6bda98e8-a33e-4cc2-b927-634fcf4708bf" />
+
 
 # 📟 Calculadora Web - Despliegue en AWS EC2
 
