@@ -1,3 +1,23 @@
+![CI](https://github.com/NicolFernandaContreras/calculadora-javascript-/actions/workflows/ci.yml/badge.svg)
+
+## Automatización con GitHub Actions
+
+Este repositorio ejecuta un workflow de **CI** en cada push a `main`.
+El workflow:
+- Configura Node.js 20 e instala dependencias (`npm install`).
+- Corre pruebas básicas con **Jest** (`npm test`).
+- Verifica que exista `index.html` en la raíz del repo.
+
+### ¿Cómo correr los tests en GitHub?
+Solo haz **commit** a `main` y revisa la pestaña **Actions**.
+
+### Notificaciones
+En el repo, haz clic en **Watch → All Activity** para recibir notificaciones por email cuando el workflow pase o falle.
+
+### Evidencias sugeridas
+- ✅ Captura del workflow en verde (éxito).
+- ❌ Captura de un fallo a propósito (ej. cambiando un `expect` del test para que falle). Luego vuelve a dejarlo bien.
+
 # 📟 Calculadora Web - Despliegue en AWS EC2
 
 Esta es una aplicación web de calculadora realizada en JavaScript, HTML y CSS puro. El objetivo de este proyecto fue desplegar exitosamente la aplicación en una instancia EC2 de AWS usando un servidor HTTP simple.
